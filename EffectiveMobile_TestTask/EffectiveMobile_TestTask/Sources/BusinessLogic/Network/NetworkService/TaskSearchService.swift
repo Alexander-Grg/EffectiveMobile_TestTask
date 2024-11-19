@@ -8,16 +8,20 @@
 import Foundation
 import Combine
 
-protocol TaskSearchServiceProtocol: AnyObject {
+struct TasksFetchServiceKey: InjectionKey {
+    static var currentValue: TasksFetchServiceProtocol = TasksFetchService()
+}
+
+protocol TasksFetchServiceProtocol: AnyObject {
     func requestToDoList() -> AnyPublisher<Data, Error>
 }
 
-final class TaskSearchService: TaskSearchServiceProtocol {
-
+final class TasksFetchService: TasksFetchServiceProtocol {
+    
     private let apiProvider = APIProvider<TaskEndpoint>()
-
+    
     func requestToDoList() -> AnyPublisher<Data, Error> {
-        return apiProvider.getData(from: .taskSearch, localFile: "Tasks")
+        return apiProvider.getData(from: .taskSearch, localFile: "todos")
             .eraseToAnyPublisher()
     }
 }

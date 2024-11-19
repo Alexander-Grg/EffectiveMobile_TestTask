@@ -34,28 +34,16 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
-				Resources/Tasks.json,
 			);
 			target = 71D5CE0C2CEB3D2200383093 /* EffectiveMobile_TestTask */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		71D5CEEB2CEB5F4500383093 /* Exceptions for "EffectiveMobile_TestTask" folder in "Compile Sources" phase from "EffectiveMobile_TestTask" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 71D5CE092CEB3D2200383093 /* Sources */;
-			membershipExceptions = (
-				Resources/Tasks.json,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		71D5CE0F2CEB3D2200383093 /* EffectiveMobile_TestTask */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				71D5CE382CEB3D2400383093 /* Exceptions for "EffectiveMobile_TestTask" folder in "EffectiveMobile_TestTask" target */,
-				71D5CEEB2CEB5F4500383093 /* Exceptions for "EffectiveMobile_TestTask" folder in "Compile Sources" phase from "EffectiveMobile_TestTask" target */,
 			);
 			path = EffectiveMobile_TestTask;
 			sourceTree = "<group>";

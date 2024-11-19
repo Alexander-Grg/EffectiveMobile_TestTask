@@ -12,7 +12,7 @@ enum TaskEndpoint: EndpointProtocol {
     var absoluteURL: String {
         return ""
     }
-
+    
     var parameters: [String: String] {
         switch self {
         case .taskSearch:

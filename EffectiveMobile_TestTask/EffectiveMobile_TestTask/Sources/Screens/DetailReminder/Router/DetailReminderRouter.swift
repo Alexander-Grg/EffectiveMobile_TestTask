@@ -16,8 +16,8 @@ final class DetailReminderRouter: DetailRemindersRouterProtocol {
         reminderDetailRef.presenter?.view = reminderDetailRef
         reminderDetailRef.presenter?.router = DetailReminderRouter()
     }
-
+    
     func goBackToReminderListView(from view: UIViewController)  {
-
+        
     }
 }

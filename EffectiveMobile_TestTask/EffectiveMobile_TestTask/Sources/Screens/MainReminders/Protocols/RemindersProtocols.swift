@@ -19,13 +19,22 @@ protocol RemindersPresenterProtocol: AnyObject {
     var view: RemindersViewProtocol? {get set}
     var router: RemindersRouterProtocol? {get set}
 
-    func viewDidLoad()
+    //    func viewDidLoad()
+    func viewWillAppear()
+    func showReminderSelection(with reminder: Task, from view: UIViewController)
+    func deleteReminder(_ reminder: Task)
+    func updateReminder(_ reminder: Task)
 }
 
 protocol RemindersInputInteractorProtocol: AnyObject {
     var presenter: RemindersOutputInteractorProtocol? {get set}
     //Presenter -> Interactor
-    func fetchReminders() -> AnyPublisher<[Task], Never>
+    func fetchRemindersFromJSON() -> AnyPublisher<[Task], Never>
+    func saveRemindersToCoreData(_ reminders: [Task])
+    func fetchCoreDataReminders() -> AnyPublisher<[Task], Error>
+    func toggleReminderCompletion(_ reminder: Task)
+    func deleteReminder(_ reminder: Task)
+    func updateReminderInCoreData(_ reminder: Task)
 }
 
 protocol RemindersOutputInteractorProtocol: AnyObject {
@@ -35,6 +44,6 @@ protocol RemindersOutputInteractorProtocol: AnyObject {
 
 protocol RemindersRouterProtocol: AnyObject {
     //Presenter -> Router
-    func pushToReminderDetail(with reminder: Task,from view: UIViewController)
-    static func createRemindersListModule(remindersListRef: RemindersViewController)
+    static func createRemindersListModule() -> UIViewController
+    func pushToReminderDetail(with reminder: Task, from view: UIViewController)
 }

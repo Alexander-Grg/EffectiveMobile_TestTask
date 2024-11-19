@@ -9,16 +9,22 @@ import UIKit
 
 final class RemindersRouter: RemindersRouterProtocol {
     func pushToReminderDetail(with reminder: Task, from view: UIViewController) {
-//         let DetailReminderViewController = view.storyboard?.instantiateViewController(withIdentifier: "DetailReminderViewController") as! DetailReminderView
-     }
-
-    class func createRemindersListModule(remindersListRef: RemindersViewController) {
-         let presenter: RemindersPresenterProtocol & RemindersOutputInteractorProtocol = RemindersPresenter()
-
-         remindersListRef.presenter = presenter
-         remindersListRef.presenter?.router = RemindersRouter()
-         remindersListRef.presenter?.view = remindersListRef
-         remindersListRef.presenter?.interactor = RemindersInteractor(remindersService: TaskSearchService())
-         remindersListRef.presenter?.interactor?.presenter = presenter
-     }
+        let detailReminderViewController = DetailReminderViewController.instantiate()
+        DetailReminderRouter.createReminderDetailModule(with: detailReminderViewController, and: reminder)
+        view.navigationController?.pushViewController(detailReminderViewController, animated: true)
+    }
+    
+    static func createRemindersListModule() -> UIViewController {
+        let presenter: RemindersPresenterProtocol & RemindersOutputInteractorProtocol = RemindersPresenter()
+        let vc = RemindersViewController.instantiate()
+        
+        vc.presenter = presenter
+        vc.presenter?.router = RemindersRouter()
+        vc.presenter?.view = vc
+        vc.presenter?.interactor = RemindersInteractor()
+        vc.presenter?.interactor?.presenter = presenter
+        
+        let navigationController = UINavigationController(rootViewController: vc)
+        return navigationController
+    }
 }
