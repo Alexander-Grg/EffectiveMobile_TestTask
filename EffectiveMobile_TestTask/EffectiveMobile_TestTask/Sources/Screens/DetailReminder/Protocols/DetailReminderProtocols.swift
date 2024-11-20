@@ -8,19 +8,19 @@
 import UIKit
 
 protocol DetailRemindersViewProtocol: AnyObject {
-    func showReminderDetail(with reminder: Task)
+    func showReminderDetail(with reminder: TaskEntity)
 }
 
 protocol DetailRemindersPresenterProtocol: AnyObject {
-    var view: DetailRemindersViewProtocol? {get set}
-    var router: DetailRemindersRouterProtocol? {get set}
-    
+    var view: DetailRemindersViewProtocol? { get set }
+    var router: DetailRemindersRouterProtocol? { get set }
+
     func viewDidLoad()
     func backButtonPressed(from view: UIViewController)
 }
 
 protocol DetailReminderInputInteractorProtocol: AnyObject {
-    func updateReminder(_ reminder: Task)
+    func saveOrUpdateReminder(_ reminder: TaskEntity)
 }
 
 protocol DetailReminderOutputInteractorProtocol: AnyObject {

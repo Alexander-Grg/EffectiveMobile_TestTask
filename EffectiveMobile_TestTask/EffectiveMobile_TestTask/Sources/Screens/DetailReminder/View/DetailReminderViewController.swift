@@ -25,7 +25,7 @@ final class DetailReminderViewController: UIViewController, DetailRemindersViewP
         textField.textColor = .black
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .none
-        textField.addTarget(self, action: #selector(titleEditingDidEnd), for: .editingDidEndOnExit)
+        textField.delegate = self
         textField.addTarget(self, action: #selector(titleEditingDidEnd), for: .editingDidEnd)
         return textField
     }()
@@ -51,20 +51,20 @@ final class DetailReminderViewController: UIViewController, DetailRemindersViewP
         return textView
     }()
 
-    var presenter: DetailReminderPresenter!
+    var presenter: DetailReminderPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        presenter.viewDidLoad()
+        presenter?.viewDidLoad()
     }
 
-    func showReminderDetail(with reminder: Task) {
+    func showReminderDetail(with reminder: TaskEntity) {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yy"
         titleTextField.text = reminder.todo
         dateLabel.text = formatter.string(for: Date())
-        //        bodyTextView.text = reminder.body
+        bodyTextView.text = reminder.body
     }
 
     private func setupUI() {
@@ -85,14 +85,28 @@ final class DetailReminderViewController: UIViewController, DetailRemindersViewP
     }
 
     @objc private func titleEditingDidEnd() {
-        guard let updatedTitle = titleTextField.text else { return }
-        presenter.updateReminderTitle(updatedTitle)
+        guard let updatedTitle = titleTextField.text, !updatedTitle.isEmpty else { return }
+        presenter?.updateReminderTitle(updatedTitle)
     }
 }
 
-extension DetailReminderViewController: UITextViewDelegate {
+extension DetailReminderViewController: UITextViewDelegate, UITextFieldDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         guard textView == bodyTextView else { return }
-        presenter.updateReminderBody(textView.text)
+        guard let updatedBody = textView.text else { return }
+        presenter?.updateReminderBody(updatedBody)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        titleEditingDidEnd()
+        return true
+    }
+
+    func textViewDidChange(_ textView: UITextView) {
+        guard textView == bodyTextView else { return }
+        guard let updatedBody = textView.text else { return }
+
+        presenter?.updateReminderBody(updatedBody)
     }
 }

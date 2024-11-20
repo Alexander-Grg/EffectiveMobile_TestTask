@@ -18,8 +18,8 @@ protocol TasksFetchServiceProtocol: AnyObject {
 
 final class TasksFetchService: TasksFetchServiceProtocol {
     
-    private let apiProvider = APIProvider<TaskEndpoint>()
-    
+    var apiProvider = APIProvider<TaskEndpoint>()
+
     func requestToDoList() -> AnyPublisher<Data, Error> {
         return apiProvider.getData(from: .taskSearch, localFile: "todos")
             .eraseToAnyPublisher()

@@ -33,93 +33,39 @@ final class RemindersInteractor: RemindersInputInteractorProtocol {
     }
 
     func saveRemindersToCoreData(_ reminders: [Task]) {
-        let context = coreDataService.context
-
-        context.perform {
-            do {
-                for reminder in reminders {
-                    let entity = TaskEntity(context: context)
-                    entity.id = Int64(reminder.id)
-                    entity.todo = reminder.todo
-                    entity.isCompleted = reminder.completed
-                    entity.userId = Int64(reminder.userID)
-                }
-                try context.save()
-            } catch {
-                print("Failed to save reminders to CoreData: \(error)")
-            }
-        }
+        coreDataService.saveTasks(reminders)
     }
 
-    func fetchCoreDataReminders() -> AnyPublisher<[Task], Error> {
-        let context = coreDataService.context
-        let fetchRequest: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
-
-        return Future<[Task], Error> { promise in
-            context.perform {
-                do {
-                    let taskEntities = try context.fetch(fetchRequest)
-                    let tasks = taskEntities.map { Task(from: $0) }
-                    promise(.success(tasks))
-                } catch {
-                    promise(.failure(error))
-                }
-            }
+    func fetchCoreDataReminders() -> AnyPublisher<[TaskEntity], Error> {
+        Future<[TaskEntity], Error> { promise in
+            let tasks = self.coreDataService.fetchTasks()
+            promise(.success(tasks))
         }.eraseToAnyPublisher()
     }
 
-    func toggleReminderCompletion(_ reminder: Task) {
-        let context = coreDataService.context
-        let fetchRequest: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %d", reminder.id)
-
-        context.perform {
-            do {
-                if let entity = try context.fetch(fetchRequest).first {
-                    entity.isCompleted.toggle()
-                    try context.save()
-                }
-            } catch {
-                print("Failed to toggle completion for reminder: \(error)")
-            }
-        }
+    func toggleReminderCompletion(_ reminder: TaskEntity) {
+        let updatedReminder = reminder
+        updatedReminder.isCompleted.toggle()
+        coreDataService.saveOrUpdateEntity(updatedReminder)
     }
 
-    func deleteReminder(_ reminder: Task) {
-        let context = coreDataService.context
-        let fetchRequest: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %d", reminder.id)
-
-        context.perform {
-            do {
-                if let entity = try context.fetch(fetchRequest).first {
-                    context.delete(entity)
-                    try context.save()
-                }
-            } catch {
-                print("Failed to delete reminder: \(error)")
-            }
-        }
+    func deleteReminder(_ reminder: TaskEntity) {
+        coreDataService.deleteTask(byId: String(reminder.id))
     }
 
-    func updateReminderInCoreData(_ reminder: Task) {
-        let context = coreDataService.context
-        let fetchRequest: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %d", reminder.id)
+    func updateReminderInCoreData(_ reminder: TaskEntity) {
+        coreDataService.saveOrUpdateEntity(reminder)
+    }
 
-        context.perform {
-            do {
-                if let entity = try context.fetch(fetchRequest).first {
-                    entity.todo = reminder.todo
-                    entity.isCompleted = reminder.completed
-                    try context.save()
-                    print("Reminder successfully updated in CoreData.")
-                } else {
-                    print("No reminder found with ID: \(reminder.id)")
-                }
-            } catch {
-                print("Failed to update reminder in CoreData: \(error.localizedDescription)")
-            }
-        }
+    func createNewReminder(from view: UIViewController, router: RemindersRouterProtocol) {
+        let context = coreDataService.context
+        let newReminder = TaskEntity(context: context)
+        newReminder.id = UUID().uuidString
+        newReminder.todo = "New Reminder"
+        newReminder.isCompleted = false
+        newReminder.body = ""
+
+        coreDataService.saveOrUpdateEntity(newReminder)
+        router.pushToReminderDetail(with: newReminder, from: view)
     }
 }

@@ -7,7 +7,15 @@
 
 import Foundation
 
-class AppLaunchChecker {
+struct AppLaunchCheckerKey: InjectionKey {
+    static var currentValue: AppLaunchCheckerProtocol = AppLaunchChecker()
+}
+
+protocol AppLaunchCheckerProtocol {
+    var isFirstLaunch: Bool { get }
+}
+
+class AppLaunchChecker: AppLaunchCheckerProtocol {
     private let firstLaunchKey = "isFirstLaunch"
     
     var isFirstLaunch: Bool {

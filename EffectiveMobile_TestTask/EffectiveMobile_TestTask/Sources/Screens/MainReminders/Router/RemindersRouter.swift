@@ -8,7 +8,7 @@
 import UIKit
 
 final class RemindersRouter: RemindersRouterProtocol {
-    func pushToReminderDetail(with reminder: Task, from view: UIViewController) {
+    func pushToReminderDetail(with reminder: TaskEntity, from view: UIViewController) {
         let detailReminderViewController = DetailReminderViewController.instantiate()
         DetailReminderRouter.createReminderDetailModule(with: detailReminderViewController, and: reminder)
         view.navigationController?.pushViewController(detailReminderViewController, animated: true)

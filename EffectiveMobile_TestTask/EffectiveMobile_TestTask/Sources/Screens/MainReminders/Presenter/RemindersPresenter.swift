@@ -4,25 +4,24 @@
 //
 //  Created by Alexander Grigoryev on 18/11/24.
 //
-
 import UIKit
 import Combine
+import CoreData
 
 final class RemindersPresenter: RemindersPresenterProtocol {
+    @Injected(\.appLaunchChecker) var appLaunchChecker
     weak var view: RemindersViewProtocol?
     var interactor: RemindersInputInteractorProtocol?
     var router: RemindersRouterProtocol?
     private var cancellables = Set<AnyCancellable>()
-    var reminders: [Task] = []
-
+    var reminders: [TaskEntity] = []
+    
     func viewWillAppear() {
         fetchAllReminders()
     }
-
+    
     func fetchAllReminders() {
-        let isFirstLaunch = AppLaunchChecker().isFirstLaunch
-
-        if isFirstLaunch {
+        if appLaunchChecker.isFirstLaunch {
             interactor?.fetchRemindersFromJSON()
                 .sink(receiveCompletion: { completion in
                     if case let .failure(error) = completion {
@@ -35,10 +34,10 @@ final class RemindersPresenter: RemindersPresenterProtocol {
                 })
                 .store(in: &cancellables)
         } else {
-            self.fetchCoreDataReminders()
+            fetchCoreDataReminders()
         }
     }
-
+    
     func fetchCoreDataReminders() {
         interactor?.fetchCoreDataReminders()
             .sink(receiveCompletion: { completion in
@@ -52,29 +51,43 @@ final class RemindersPresenter: RemindersPresenterProtocol {
             })
             .store(in: &cancellables)
     }
-
-    func toggleReminderCompletion(reminder: Task) {
+    
+    func toggleReminderCompletion(reminder: TaskEntity) {
         if let index = reminders.firstIndex(where: { $0.id == reminder.id }) {
-            reminders[index].completed.toggle()
+            reminders[index].isCompleted.toggle()
             interactor?.toggleReminderCompletion(reminders[index])
             view?.showReminders(with: reminders)
         }
     }
-
-    func showReminderSelection(with reminder: Task, from view: UIViewController) {
+    
+    func showReminderSelection(with reminder: TaskEntity, from view: UIViewController) {
         router?.pushToReminderDetail(with: reminder, from: view)
     }
-
-    func deleteReminder(_ reminder: Task) {
+    
+    func deleteReminder(_ reminder: TaskEntity) {
         interactor?.deleteReminder(reminder)
+        reminders.removeAll { $0.id == reminder.id }
+        view?.showReminders(with: reminders)
     }
-
-    func updateReminder(_ reminder: Task) {
+    
+    func updateReminder(_ reminder: TaskEntity) {
+        if let index = reminders.firstIndex(where: { $0.id == reminder.id }) {
+            reminders[index] = reminder
+        }
         interactor?.updateReminderInCoreData(reminder)
+        view?.showReminders(with: reminders)
+    }
+    
+    func createNewReminder(from view: UIViewController) {
+        if let router = router {
+            interactor?.createNewReminder(from: view, router: router)
+        }
     }
 }
 
 extension RemindersPresenter: RemindersOutputInteractorProtocol {
-    func remindersDidFetch(reminders: [Task]) {
+    func remindersDidFetch(reminders: [TaskEntity]) {
+        self.reminders = reminders
+        view?.showReminders(with: reminders)
     }
 }

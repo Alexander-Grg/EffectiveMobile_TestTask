@@ -55,4 +55,9 @@ extension InjectedValues {
         get { Self[CoreDataServiceKey.self] }
         set { Self[CoreDataServiceKey.self] = newValue }
     }
+    
+    var appLaunchChecker: AppLaunchCheckerProtocol {
+        get { Self[AppLaunchCheckerKey.self] }
+        set { Self[AppLaunchCheckerKey.self] = newValue }
+    }
 }

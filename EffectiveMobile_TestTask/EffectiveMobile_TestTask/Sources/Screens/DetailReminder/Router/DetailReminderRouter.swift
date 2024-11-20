@@ -9,15 +9,19 @@ import UIKit
 
 final class DetailReminderRouter: DetailRemindersRouterProtocol {
     
-    class func createReminderDetailModule(with reminderDetailRef: DetailReminderViewController, and reminder: Task) {
+    class func createReminderDetailModule(with reminderDetailRef: DetailReminderViewController, and reminder: TaskEntity) {
         let presenter = DetailReminderPresenter()
+        let interactor = DetailReminderInteractor()
+        let router = DetailReminderRouter()
+        
         presenter.reminder = reminder
         reminderDetailRef.presenter = presenter
         reminderDetailRef.presenter?.view = reminderDetailRef
-        reminderDetailRef.presenter?.router = DetailReminderRouter()
+        reminderDetailRef.presenter?.interactor = interactor
+        reminderDetailRef.presenter?.router = router
     }
     
-    func goBackToReminderListView(from view: UIViewController)  {
-        
+    func goBackToReminderListView(from view: UIViewController) {
+        view.navigationController?.popViewController(animated: true)
     }
 }

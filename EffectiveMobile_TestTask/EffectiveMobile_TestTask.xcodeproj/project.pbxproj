@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		717F66F12CEDC23900CEAF93 /* TaskEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F66F02CEDC23900CEAF93 /* TaskEntity+CoreDataProperties.swift */; };
+		717F66F22CEDC23900CEAF93 /* TaskEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F66EF2CEDC23900CEAF93 /* TaskEntity+CoreDataClass.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		71D5CE272CEB3D2400383093 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		717F66EF2CEDC23900CEAF93 /* TaskEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		717F66F02CEDC23900CEAF93 /* TaskEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		71D5CE0D2CEB3D2200383093 /* EffectiveMobile_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EffectiveMobile_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D5CE262CEB3D2400383093 /* EffectiveMobile_TestTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EffectiveMobile_TestTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D5CE302CEB3D2400383093 /* EffectiveMobile_TestTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EffectiveMobile_TestTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +95,8 @@
 		71D5CE042CEB3D2200383093 = {
 			isa = PBXGroup;
 			children = (
+				717F66EF2CEDC23900CEAF93 /* TaskEntity+CoreDataClass.swift */,
+				717F66F02CEDC23900CEAF93 /* TaskEntity+CoreDataProperties.swift */,
 				71D5CE0F2CEB3D2200383093 /* EffectiveMobile_TestTask */,
 				71D5CE292CEB3D2400383093 /* EffectiveMobile_TestTaskTests */,
 				71D5CE332CEB3D2400383093 /* EffectiveMobile_TestTaskUITests */,
@@ -191,6 +200,7 @@
 					};
 					71D5CE252CEB3D2400383093 = {
 						CreatedOnToolsVersion = 16.1;
+						LastSwiftMigration = 1610;
 						TestTargetID = 71D5CE0C2CEB3D2200383093;
 					};
 					71D5CE2F2CEB3D2400383093 = {
@@ -249,6 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				717F66F12CEDC23900CEAF93 /* TaskEntity+CoreDataProperties.swift in Sources */,
+				717F66F22CEDC23900CEAF93 /* TaskEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44W4ZX859Z;
@@ -470,6 +483,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "alex.grg.EffectiveMobile-TestTaskTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EffectiveMobile_TestTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EffectiveMobile_TestTask";
@@ -480,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44W4ZX859Z;

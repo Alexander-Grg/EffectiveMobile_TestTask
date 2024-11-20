@@ -10,40 +10,40 @@ import Combine
 
 protocol RemindersViewProtocol: AnyObject {
     // PRESENTER -> VIEW
-    func showReminders(with reminder: [Task])
+    func showReminders(with reminder: [TaskEntity])
 }
 
 protocol RemindersPresenterProtocol: AnyObject {
-    //View -> Presenter
-    var interactor: RemindersInputInteractorProtocol? {get set}
-    var view: RemindersViewProtocol? {get set}
-    var router: RemindersRouterProtocol? {get set}
-
-    //    func viewDidLoad()
+    var interactor: RemindersInputInteractorProtocol? { get set }
+    var view: RemindersViewProtocol? { get set }
+    var router: RemindersRouterProtocol? { get set }
+    
     func viewWillAppear()
-    func showReminderSelection(with reminder: Task, from view: UIViewController)
-    func deleteReminder(_ reminder: Task)
-    func updateReminder(_ reminder: Task)
+    func showReminderSelection(with reminder: TaskEntity, from view: UIViewController)
+    func deleteReminder(_ reminder: TaskEntity)
+    func updateReminder(_ reminder: TaskEntity)
+    func createNewReminder(from view: UIViewController)
 }
 
 protocol RemindersInputInteractorProtocol: AnyObject {
-    var presenter: RemindersOutputInteractorProtocol? {get set}
-    //Presenter -> Interactor
+    // Presenter -> Interactor
+    var presenter: RemindersOutputInteractorProtocol? { get set }
     func fetchRemindersFromJSON() -> AnyPublisher<[Task], Never>
     func saveRemindersToCoreData(_ reminders: [Task])
-    func fetchCoreDataReminders() -> AnyPublisher<[Task], Error>
-    func toggleReminderCompletion(_ reminder: Task)
-    func deleteReminder(_ reminder: Task)
-    func updateReminderInCoreData(_ reminder: Task)
+    func fetchCoreDataReminders() -> AnyPublisher<[TaskEntity], Error>
+    func toggleReminderCompletion(_ reminder: TaskEntity)
+    func deleteReminder(_ reminder: TaskEntity)
+    func updateReminderInCoreData(_ reminder: TaskEntity)
+    func createNewReminder(from view: UIViewController, router: RemindersRouterProtocol)
 }
 
 protocol RemindersOutputInteractorProtocol: AnyObject {
-    //Interactor -> Presenter
-    func remindersDidFetch(reminders: [Task])
+    // Interactor -> Presenter
+    func remindersDidFetch(reminders: [TaskEntity])
 }
 
 protocol RemindersRouterProtocol: AnyObject {
-    //Presenter -> Router
+    // Presenter -> Router
     static func createRemindersListModule() -> UIViewController
-    func pushToReminderDetail(with reminder: Task, from view: UIViewController)
+    func pushToReminderDetail(with reminder: TaskEntity, from view: UIViewController)
 }

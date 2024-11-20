@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct TaskResponse: Codable {
     let todos: [Task]
     let total, skip, limit: Int
@@ -26,9 +27,9 @@ struct Task: Codable {
 
 extension Task {
     init(from entity: TaskEntity) {
-        self.id = Int(entity.id)
+        self.id = Int(entity.id) ?? 0
         self.todo = entity.todo ?? ""
         self.completed = entity.isCompleted
-        self.userID = Int(entity.userId)
+        self.userID = Int(entity.userId) ?? 0
     }
 }

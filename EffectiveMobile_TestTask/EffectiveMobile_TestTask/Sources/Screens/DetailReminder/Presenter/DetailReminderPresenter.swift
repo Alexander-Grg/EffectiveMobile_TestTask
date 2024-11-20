@@ -6,32 +6,43 @@
 //
 
 import UIKit
+import Combine
 
 final class DetailReminderPresenter: DetailRemindersPresenterProtocol {
     weak var view: DetailRemindersViewProtocol?
     var router: DetailRemindersRouterProtocol?
     var interactor: DetailReminderInputInteractorProtocol?
-    var reminder: Task?
+    var reminder: TaskEntity?
     
     func viewDidLoad() {
-        if let task = reminder {
-            view?.showReminderDetail(with: task)
+        if let reminderEntity = reminder {
+            view?.showReminderDetail(with: reminderEntity)
         }
     }
     
     func updateReminderTitle(_ newTitle: String) {
-        reminder?.todo = newTitle
-        saveReminderChanges()
+        guard let reminder = reminder else { return }
+        reminder.todo = newTitle
+        interactor?.saveOrUpdateReminder(reminder)
     }
     
     func updateReminderBody(_ newBody: String) {
-        //        reminder?.body = newBody
-        saveReminderChanges()
+        guard let reminder = reminder else { return }
+        reminder.body = newBody
+        interactor?.saveOrUpdateReminder(reminder)
+    }
+    
+    private func isNewReminder(_ reminder: TaskEntity) -> Bool {
+        return reminder.todo?.isEmpty ?? true || reminder.id == ""
     }
     
     private func saveReminderChanges() {
         guard let updatedReminder = reminder else { return }
-        interactor?.updateReminder(updatedReminder)
+        if isNewReminder(updatedReminder) {
+            interactor?.saveOrUpdateReminder(updatedReminder)
+        } else {
+            interactor?.saveOrUpdateReminder(updatedReminder)
+        }
     }
     
     func backButtonPressed(from view: UIViewController) {
