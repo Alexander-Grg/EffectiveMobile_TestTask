@@ -22,7 +22,7 @@ final class DetailReminderViewController: UIViewController, DetailRemindersViewP
         let textField = UITextField()
         textField.font = .systemFont(ofSize: 34, weight: .bold)
         textField.textAlignment = .left
-        textField.textColor = .black
+        textField.textColor = .label
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .none
         textField.delegate = self
