@@ -86,8 +86,4 @@ final class RemindersPresenter: RemindersPresenterProtocol {
 }
 
 extension RemindersPresenter: RemindersOutputInteractorProtocol {
-    func remindersDidFetch(reminders: [TaskEntity]) {
-        self.reminders = reminders
-        view?.showReminders(with: reminders)
-    }
 }

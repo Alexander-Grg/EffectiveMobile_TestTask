@@ -25,6 +25,7 @@ final class RemindersRouter: RemindersRouterProtocol {
         vc.presenter?.interactor?.presenter = presenter
         
         let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.navigationBar.tintColor = .systemBackground
         return navigationController
     }
 }

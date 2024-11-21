@@ -69,6 +69,13 @@ final class DetailReminderViewController: UIViewController, DetailRemindersViewP
 
     private func setupUI() {
         view.backgroundColor = .systemBackground
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        appearance.shadowImage = nil
+        appearance.shadowColor = nil
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = false
         view.addSubview(stackView)

@@ -14,6 +14,7 @@ protocol RemindersViewProtocol: AnyObject {
 }
 
 protocol RemindersPresenterProtocol: AnyObject {
+//    VIEW -> PRESENTER
     var interactor: RemindersInputInteractorProtocol? { get set }
     var view: RemindersViewProtocol? { get set }
     var router: RemindersRouterProtocol? { get set }
@@ -39,7 +40,6 @@ protocol RemindersInputInteractorProtocol: AnyObject {
 
 protocol RemindersOutputInteractorProtocol: AnyObject {
     // Interactor -> Presenter
-    func remindersDidFetch(reminders: [TaskEntity])
 }
 
 protocol RemindersRouterProtocol: AnyObject {
