@@ -19,6 +19,8 @@ final class RemindersViewController: UIViewController, RemindersViewProtocol, St
     private(set) lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.tintColor = .systemBlue
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.delegate = self
@@ -109,6 +111,7 @@ final class RemindersViewController: UIViewController, RemindersViewProtocol, St
             .font: UIFont.systemFont(ofSize: 17, weight: .semibold),
             .foregroundColor: UIColor.label
         ]
+        
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.prefersLargeTitles = true
