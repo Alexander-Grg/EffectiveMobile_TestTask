@@ -17,52 +17,52 @@
 			containerPortal = 71D5CE052CEB3D2200383093 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 71D5CE0C2CEB3D2200383093;
-			remoteInfo = EffectiveMobile_TestTask;
+			remoteInfo = "NOTESAPP-VIPER-cleanArchitecture";
 		};
 		71D5CE312CEB3D2400383093 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 71D5CE052CEB3D2200383093 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 71D5CE0C2CEB3D2200383093;
-			remoteInfo = EffectiveMobile_TestTask;
+			remoteInfo = "NOTESAPP-VIPER-cleanArchitecture";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		717F66EF2CEDC23900CEAF93 /* TaskEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		717F66F02CEDC23900CEAF93 /* TaskEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		71D5CE0D2CEB3D2200383093 /* EffectiveMobile_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EffectiveMobile_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		71D5CE262CEB3D2400383093 /* EffectiveMobile_TestTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EffectiveMobile_TestTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		71D5CE302CEB3D2400383093 /* EffectiveMobile_TestTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EffectiveMobile_TestTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D5CE0D2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOTESAPP-VIPER-cleanArchitecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D5CE262CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NOTESAPP-VIPER-cleanArchitectureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D5CE302CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NOTESAPP-VIPER-cleanArchitectureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		71D5CE382CEB3D2400383093 /* Exceptions for "EffectiveMobile_TestTask" folder in "EffectiveMobile_TestTask" target */ = {
+		71F609552CF0DA7200F0051F /* Exceptions for "NOTESAPP-VIPER-cleanArchitecture" folder in "NOTESAPP-VIPER-cleanArchitecture" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 71D5CE0C2CEB3D2200383093 /* EffectiveMobile_TestTask */;
+			target = 71D5CE0C2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		71D5CE0F2CEB3D2200383093 /* EffectiveMobile_TestTask */ = {
+		71D5CE0F2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				71D5CE382CEB3D2400383093 /* Exceptions for "EffectiveMobile_TestTask" folder in "EffectiveMobile_TestTask" target */,
+				71F609552CF0DA7200F0051F /* Exceptions for "NOTESAPP-VIPER-cleanArchitecture" folder in "NOTESAPP-VIPER-cleanArchitecture" target */,
 			);
-			path = EffectiveMobile_TestTask;
+			path = "NOTESAPP-VIPER-cleanArchitecture";
 			sourceTree = "<group>";
 		};
-		71D5CE292CEB3D2400383093 /* EffectiveMobile_TestTaskTests */ = {
+		71D5CE292CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EffectiveMobile_TestTaskTests;
+			path = "NOTESAPP-VIPER-cleanArchitectureTests";
 			sourceTree = "<group>";
 		};
-		71D5CE332CEB3D2400383093 /* EffectiveMobile_TestTaskUITests */ = {
+		71D5CE332CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EffectiveMobile_TestTaskUITests;
+			path = "NOTESAPP-VIPER-cleanArchitectureUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -97,9 +97,9 @@
 			children = (
 				717F66EF2CEDC23900CEAF93 /* TaskEntity+CoreDataClass.swift */,
 				717F66F02CEDC23900CEAF93 /* TaskEntity+CoreDataProperties.swift */,
-				71D5CE0F2CEB3D2200383093 /* EffectiveMobile_TestTask */,
-				71D5CE292CEB3D2400383093 /* EffectiveMobile_TestTaskTests */,
-				71D5CE332CEB3D2400383093 /* EffectiveMobile_TestTaskUITests */,
+				71D5CE0F2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture */,
+				71D5CE292CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureTests */,
+				71D5CE332CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureUITests */,
 				71D5CE0E2CEB3D2200383093 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,9 +107,9 @@
 		71D5CE0E2CEB3D2200383093 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				71D5CE0D2CEB3D2200383093 /* EffectiveMobile_TestTask.app */,
-				71D5CE262CEB3D2400383093 /* EffectiveMobile_TestTaskTests.xctest */,
-				71D5CE302CEB3D2400383093 /* EffectiveMobile_TestTaskUITests.xctest */,
+				71D5CE0D2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture.app */,
+				71D5CE262CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureTests.xctest */,
+				71D5CE302CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,9 +117,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		71D5CE0C2CEB3D2200383093 /* EffectiveMobile_TestTask */ = {
+		71D5CE0C2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71D5CE392CEB3D2400383093 /* Build configuration list for PBXNativeTarget "EffectiveMobile_TestTask" */;
+			buildConfigurationList = 71D5CE392CEB3D2400383093 /* Build configuration list for PBXNativeTarget "NOTESAPP-VIPER-cleanArchitecture" */;
 			buildPhases = (
 				71D5CE092CEB3D2200383093 /* Sources */,
 				71D5CE0A2CEB3D2200383093 /* Frameworks */,
@@ -130,18 +130,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				71D5CE0F2CEB3D2200383093 /* EffectiveMobile_TestTask */,
+				71D5CE0F2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture */,
 			);
-			name = EffectiveMobile_TestTask;
+			name = "NOTESAPP-VIPER-cleanArchitecture";
 			packageProductDependencies = (
 			);
-			productName = EffectiveMobile_TestTask;
-			productReference = 71D5CE0D2CEB3D2200383093 /* EffectiveMobile_TestTask.app */;
+			productName = "NOTESAPP-VIPER-cleanArchitecture";
+			productReference = 71D5CE0D2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture.app */;
 			productType = "com.apple.product-type.application";
 		};
-		71D5CE252CEB3D2400383093 /* EffectiveMobile_TestTaskTests */ = {
+		71D5CE252CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71D5CE3E2CEB3D2400383093 /* Build configuration list for PBXNativeTarget "EffectiveMobile_TestTaskTests" */;
+			buildConfigurationList = 71D5CE3E2CEB3D2400383093 /* Build configuration list for PBXNativeTarget "NOTESAPP-VIPER-cleanArchitectureTests" */;
 			buildPhases = (
 				71D5CE222CEB3D2400383093 /* Sources */,
 				71D5CE232CEB3D2400383093 /* Frameworks */,
@@ -153,18 +153,18 @@
 				71D5CE282CEB3D2400383093 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				71D5CE292CEB3D2400383093 /* EffectiveMobile_TestTaskTests */,
+				71D5CE292CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureTests */,
 			);
-			name = EffectiveMobile_TestTaskTests;
+			name = "NOTESAPP-VIPER-cleanArchitectureTests";
 			packageProductDependencies = (
 			);
-			productName = EffectiveMobile_TestTaskTests;
-			productReference = 71D5CE262CEB3D2400383093 /* EffectiveMobile_TestTaskTests.xctest */;
+			productName = "NOTESAPP-VIPER-cleanArchitectureTests";
+			productReference = 71D5CE262CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		71D5CE2F2CEB3D2400383093 /* EffectiveMobile_TestTaskUITests */ = {
+		71D5CE2F2CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71D5CE412CEB3D2400383093 /* Build configuration list for PBXNativeTarget "EffectiveMobile_TestTaskUITests" */;
+			buildConfigurationList = 71D5CE412CEB3D2400383093 /* Build configuration list for PBXNativeTarget "NOTESAPP-VIPER-cleanArchitectureUITests" */;
 			buildPhases = (
 				71D5CE2C2CEB3D2400383093 /* Sources */,
 				71D5CE2D2CEB3D2400383093 /* Frameworks */,
@@ -176,13 +176,13 @@
 				71D5CE322CEB3D2400383093 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				71D5CE332CEB3D2400383093 /* EffectiveMobile_TestTaskUITests */,
+				71D5CE332CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureUITests */,
 			);
-			name = EffectiveMobile_TestTaskUITests;
+			name = "NOTESAPP-VIPER-cleanArchitectureUITests";
 			packageProductDependencies = (
 			);
-			productName = EffectiveMobile_TestTaskUITests;
-			productReference = 71D5CE302CEB3D2400383093 /* EffectiveMobile_TestTaskUITests.xctest */;
+			productName = "NOTESAPP-VIPER-cleanArchitectureUITests";
+			productReference = 71D5CE302CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +209,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 71D5CE082CEB3D2200383093 /* Build configuration list for PBXProject "EffectiveMobile_TestTask" */;
+			buildConfigurationList = 71D5CE082CEB3D2200383093 /* Build configuration list for PBXProject "NOTESAPP-VIPER-cleanArchitecture" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -223,9 +223,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				71D5CE0C2CEB3D2200383093 /* EffectiveMobile_TestTask */,
-				71D5CE252CEB3D2400383093 /* EffectiveMobile_TestTaskTests */,
-				71D5CE2F2CEB3D2400383093 /* EffectiveMobile_TestTaskUITests */,
+				71D5CE0C2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture */,
+				71D5CE252CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureTests */,
+				71D5CE2F2CEB3D2400383093 /* NOTESAPP-VIPER-cleanArchitectureUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,12 +283,12 @@
 /* Begin PBXTargetDependency section */
 		71D5CE282CEB3D2400383093 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 71D5CE0C2CEB3D2200383093 /* EffectiveMobile_TestTask */;
+			target = 71D5CE0C2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture */;
 			targetProxy = 71D5CE272CEB3D2400383093 /* PBXContainerItemProxy */;
 		};
 		71D5CE322CEB3D2400383093 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 71D5CE0C2CEB3D2200383093 /* EffectiveMobile_TestTask */;
+			target = 71D5CE0C2CEB3D2200383093 /* NOTESAPP-VIPER-cleanArchitecture */;
 			targetProxy = 71D5CE312CEB3D2400383093 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -303,7 +303,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44W4ZX859Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EffectiveMobile_TestTask/Info.plist;
+				INFOPLIST_FILE = "NOTESAPP-VIPER-cleanArchitecture/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -314,7 +314,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "alex.grg.EffectiveMobile-TestTask";
+				PRODUCT_BUNDLE_IDENTIFIER = "alex.grg.NOTESAPP-VIPER-cleanArchitecture";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -331,7 +331,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44W4ZX859Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EffectiveMobile_TestTask/Info.plist;
+				INFOPLIST_FILE = "NOTESAPP-VIPER-cleanArchitecture/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -342,7 +342,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "alex.grg.EffectiveMobile-TestTask";
+				PRODUCT_BUNDLE_IDENTIFIER = "alex.grg.NOTESAPP-VIPER-cleanArchitecture";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -486,7 +486,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EffectiveMobile_TestTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EffectiveMobile_TestTask";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NOTESAPP-VIPER-cleanArchitecture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NOTESAPP-VIPER-cleanArchitecture";
 			};
 			name = Debug;
 		};
@@ -506,7 +506,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EffectiveMobile_TestTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EffectiveMobile_TestTask";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NOTESAPP-VIPER-cleanArchitecture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NOTESAPP-VIPER-cleanArchitecture";
 			};
 			name = Release;
 		};
@@ -523,7 +523,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EffectiveMobile_TestTask;
+				TEST_TARGET_NAME = "NOTESAPP-VIPER-cleanArchitecture";
 			};
 			name = Debug;
 		};
@@ -540,14 +540,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EffectiveMobile_TestTask;
+				TEST_TARGET_NAME = "NOTESAPP-VIPER-cleanArchitecture";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		71D5CE082CEB3D2200383093 /* Build configuration list for PBXProject "EffectiveMobile_TestTask" */ = {
+		71D5CE082CEB3D2200383093 /* Build configuration list for PBXProject "NOTESAPP-VIPER-cleanArchitecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71D5CE3C2CEB3D2400383093 /* Debug */,
@@ -556,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71D5CE392CEB3D2400383093 /* Build configuration list for PBXNativeTarget "EffectiveMobile_TestTask" */ = {
+		71D5CE392CEB3D2400383093 /* Build configuration list for PBXNativeTarget "NOTESAPP-VIPER-cleanArchitecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71D5CE3A2CEB3D2400383093 /* Debug */,
@@ -565,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71D5CE3E2CEB3D2400383093 /* Build configuration list for PBXNativeTarget "EffectiveMobile_TestTaskTests" */ = {
+		71D5CE3E2CEB3D2400383093 /* Build configuration list for PBXNativeTarget "NOTESAPP-VIPER-cleanArchitectureTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71D5CE3F2CEB3D2400383093 /* Debug */,
@@ -574,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71D5CE412CEB3D2400383093 /* Build configuration list for PBXNativeTarget "EffectiveMobile_TestTaskUITests" */ = {
+		71D5CE412CEB3D2400383093 /* Build configuration list for PBXNativeTarget "NOTESAPP-VIPER-cleanArchitectureUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71D5CE422CEB3D2400383093 /* Debug */,
